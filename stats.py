@@ -1,20 +1,18 @@
-def count(text: str) -> str:
-    total_words = []
+def get_num_words(text: str) -> str:
     a = text.split()
-    b = dict_convert(a)
-    return b
+    count = 0
+    for _ in a:
+        count += 1
+    new_text = f"{count} words found in the document"
+    return new_text
 
-
-def dict_convert(text: str) -> str:
-    dict_list = {}
-    for i in a:
-        i = i.lower()
-        if i not in total_words:
-            total_words[str(i)] = 1
+def dict_count(text: str):
+    new_dict = {}
+    for i in text:
+        a = i.lower()
+        if a not in new_dict:
+            new_dict[a] = 1
         else:
-            total_words[str(i)] += 1
-    sorted_total_words: dict[str, int] = dict(
-        sorted(total_words.items(), key=lambda x: x[1])
-    )
-    for i in sorted_total_words.keys():
-        print(f"{sorted_total_words[i]} -> {i}")
+            new_dict[a] += 1
+
+#print(count("hi Now let's see"))
