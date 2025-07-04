@@ -1,10 +1,7 @@
 def get_num_words(text: str) -> str:
-    a = text.split()
-    count = 0
-    for _ in a:
-        count += 1
-    new_text = f"{count} words found in the document"
-    return new_text
+    count = len(text.split())
+    return f"Found {count} total words"
+
 
 def dict_count(text: str):
     new_dict = {}
@@ -14,5 +11,17 @@ def dict_count(text: str):
             new_dict[a] = 1
         else:
             new_dict[a] += 1
+    return new_dict
 
-#print(count("hi Now let's see"))
+def sorted_dict(dict):
+    new_list = []
+    for a, b in dict.items():
+        if a.isalpha():
+            new_list.append({"char": a, "num": b})
+
+
+    new_list.sort(reverse=True, key=sort_on)
+    return new_list
+
+def sort_on(item):
+    return item["num"]
